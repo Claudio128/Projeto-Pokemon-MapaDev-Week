@@ -30,5 +30,13 @@ listaSelecaoPokemons.forEach(pokemon => {
 
         const cartaoPokemonParaAbrir = document.getElementById(idCartaoPokemonParaAbrir)
         cartaoPokemonParaAbrir.classList.add('aberto')
+
+        //- Remover a class ativo que marca o Pokémon selecionado
+        const pokemonAtivoNaListagem = document.querySelector('.ativo')
+        pokemonAtivoNaListagem.classList.remove('ativo')
+
+        //- Adicionar a class ativo no item da lista selecionado
+        const pokemonSelecionadoNaListagem = document.getElementById(idPokemonSelecionado)
+        pokemonSelecionadoNaListagem.classList.add('ativo')
     })
 })
