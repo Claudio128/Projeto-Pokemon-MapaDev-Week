@@ -13,6 +13,22 @@ Vamos precisar trabalhar com um evento de click feito pelo usuário na listagem 
 - Remover a class ativo que marca o Pokémon selecionado
 - Adicionar a class ativo no item da lista selecionado*/
 
-// Criando as variáveis 
+// Presisamos criar duas variáveis no JS, para trabalhar com os elementos da tela
 const listaSelecaoPokemons = document.querySelectorAll('.pokemon')
 const pokemonsCartao = document.querySelectorAll('.cartao-pokemon')
+
+listaSelecaoPokemons.forEach(pokemon => {
+    pokemon.addEventListener('click', () => {
+        //- Remover a class aberto só do cartão que está aberto
+        const cartaoPokemonAberto = document.querySelector('.aberto')
+        cartaoPokemonAberto.classList.remove('aberto')
+
+        //- Ao clicar em um Pokémon da listagem, pegamos o ID do pokémon para saber qual cartão mostrar
+        const idPokemonSelecionado = pokemon.attributes.id.value
+        
+        const idCartaoPokemonParaAbrir = 'cartao-' + idPokemonSelecionado
+
+        const cartaoPokemonParaAbrir = document.getElementById(idCartaoPokemonParaAbrir)
+        cartaoPokemonParaAbrir.classList.add('aberto')
+    })
+})
