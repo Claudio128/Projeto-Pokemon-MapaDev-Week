@@ -15,3 +15,4 @@ Vamos precisar trabalhar com um evento de click feito pelo usuário na listagem 
 
 // Criando as variáveis 
 const listaSelecaoPokemons = document.querySelectorAll('.pokemon')
+const pokemonsCartao = document.querySelectorAll('.cartao-pokemon')
